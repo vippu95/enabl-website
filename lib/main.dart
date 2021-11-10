@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         // you want
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Clicker Counter Home Page'),
+      home: MyHomePage(title: 'vipinsi home page'),
     );
   }
 }
