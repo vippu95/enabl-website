@@ -33,8 +33,8 @@ class MyHomePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Header(),
-              Body()
+              Text('Column1'),
+              Text('Column2')
             ],
           ),
         ),

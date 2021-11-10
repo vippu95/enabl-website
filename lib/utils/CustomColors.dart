@@ -1,7 +1,7 @@
 import 'package:flutter_web/material.dart';
 
 class CustomColors {
-  static const Color white1 = Color(0xFFF8FBFF);
+  static final Color white1 = Color(0xFFF8FBFF);
   static const Color white2 = Color(0xFFFCFDFD);
 
   static const Color blue1 = Color(0xFF00b0ff);
