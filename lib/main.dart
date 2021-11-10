@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Application name
-      title: 'Flutter Stateful Clicker Counter',
+      title: 'vipinsi first flutter app',
       theme: ThemeData(
         // Application theme data, you can set the colors for the application as
         // you want
