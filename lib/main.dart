@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '.package:enabl/utils/C';
 
 void main() => runApp(MyApp());
 
@@ -25,8 +26,8 @@ class MyHomePage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-        Colors.white,
-        Colors.white54
+        CustomColors.white1,
+        CustomColors.white2
       ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
