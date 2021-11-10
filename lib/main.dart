@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         // you want
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'vipinsi home page'),
+      home: MyHomePage(title: 'Thsi is awsome'),
     );
   }
 }
