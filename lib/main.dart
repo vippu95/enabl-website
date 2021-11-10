@@ -20,26 +20,25 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('Hello world');
     //Add a container and provide a linear gradient.
     //basically use different shades of same color.
-    // return Container(
-    //   decoration: BoxDecoration(
-    //       gradient: LinearGradient(colors: [
-    //     Colors.white,
-    //     Colors.blue
-    //   ])),
-    //   child: Scaffold(
-    //     backgroundColor: Colors.transparent,
-    //     body: SingleChildScrollView(
-    //       child: Column(
-    //         children: <Widget>[
-    //           Text('Column1'),
-    //           Text('Column2')
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+        Colors.white,
+        Colors.blue
+      ])),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text('Column1'),
+              Text('Column2')
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
