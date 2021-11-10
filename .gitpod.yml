@@ -17,7 +17,7 @@ tasks:
       flutter build -v web
       flutter build -v appbundle
       flutter build -v apk
-      
+
   - command: |
       flutter devices
       flutter run -d web-serve --web-port 8080 --verbose
@@ -26,13 +26,15 @@ tasks:
 ports:
   - port: 5900
     onOpen: ignore
-    # vnc
+# vnc
   - port: 6080
     onOpen: open-preview
-    # flutter
+# flutter
   - port: 8080
     onOpen: open-preview
 
 vscode:
   extensions:
     - dart-code.flutter
+    - dart-code.dart-code
+    - ms-azuretools.vscode-docker
