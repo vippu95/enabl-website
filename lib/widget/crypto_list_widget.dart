@@ -3,9 +3,9 @@ import 'package:enabl/widget/crypto_list_card.dart';
 import 'package:flutter/material.dart';
 
 class CryptoListWidget extends StatelessWidget {
-  final List<TickerResponseEntity> _tickerResponseList;
+  final TickerResponse _tickerResponse;
 
-  CryptoListWidget(this._tickerResponseList);
+  CryptoListWidget(this._tickerResponse);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,6 @@ class CryptoListWidget extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return new Flexible(
-        child: new ListView.builder(
-            itemCount: _tickerResponseList.length,
-            itemBuilder: (context, index) {
-              return CryptoListCard(_tickerResponseList[index]);
-            }));
+    return CryptoListCard("bitcoin", _tickerResponse.bitcoin);
   }
 }

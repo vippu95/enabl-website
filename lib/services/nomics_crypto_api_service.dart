@@ -2,14 +2,16 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:enabl/data/ticker_api_response.dart';
 
-class NomicsCryptoApiService {
-  static const String urlPrefix = "api.nomics.com";
-  static const String urlEndpoint = "/v1/currencies/sparkline";
-  static const String apiKey = "17915e294830e954f116803170ab7efbc653ca16";
+class CoinGeckoCryptoApiService {
+  static const String urlPrefix = "api.coingecko.com";
+  static const String urlEndpoint = "/api/v3/simple/price";
 
-  static Future<List<TickerResponseEntity>> getTickerData() async {
+  static Future<TickerResponse> getTickerData() async {
     final queryParameters = {
-      'key': apiKey,
+      'ids': 'bitcoin',
+      'vs_currencies': 'usd',
+      'include_24hr_vol': 'true',
+      'include_24hr_change': 'true'
     };
 
     final uri = Uri.https(urlPrefix, urlEndpoint, queryParameters);

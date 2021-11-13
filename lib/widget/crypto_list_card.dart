@@ -3,16 +3,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CryptoListCard extends StatelessWidget {
+  final String cryptoName;
   final TickerResponseEntity entity;
 
-  CryptoListCard(this.entity);
+  CryptoListCard(this.cryptoName, this.entity);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Text(entity.name),
-        subtitle: Text(entity.price.toString()),
+        child: ListTile(
+      title: Text(this.cryptoName),
+      subtitle: Text(this.entity.usdPrice.toString()),
     ));
   }
 }

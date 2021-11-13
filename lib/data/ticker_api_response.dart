@@ -1,12 +1,25 @@
-class TickerResponseEntity {
-  String name;
-  String timestamp;
-  double price;
+class TickerResponse {
+  TickerResponseEntity bitcoin;
 
-  TickerResponseEntity({this.name, this.timestamp, this.price});
+  TickerResponse({this.bitcoin});
+
+  factory TickerResponse.fromJson(Map<String, dynamic> json) {
+    return TickerResponse(bitcoin: json["bitcoin"]);
+  }
+}
+
+class TickerResponseEntity {
+  double usdPrice;
+  double oneDayVolume;
+  double oneDayChangePercent;
+
+  TickerResponseEntity(
+      {this.usdPrice, this.oneDayVolume, this.oneDayChangePercent});
 
   factory TickerResponseEntity.fromJson(Map<String, dynamic> json) {
     return TickerResponseEntity(
-        name: json["name"], timestamp: json["timestamp"], price: json["price"]);
+        usdPrice: json["usd"],
+        oneDayVolume: json["usd_24h_vol"],
+        oneDayChangePercent: json["usd_24h_change"]);
   }
 }

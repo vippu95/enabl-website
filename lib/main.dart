@@ -4,8 +4,8 @@ import 'package:enabl/widget/crypto_list_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  List<TickerResponseEntity> tickerApiResponse =
-      await NomicsCryptoApiService.getTickerData();
+  TickerResponse tickerApiResponse =
+      await CoinGeckoCryptoApiService.getTickerData();
   print(tickerApiResponse);
 
   runApp(new MaterialApp(home: new CryptoListWidget(tickerApiResponse)));
