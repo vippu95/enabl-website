@@ -16,6 +16,10 @@ class CryptoListWidget extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return CryptoListCard(_tickerResponse.entitiesList.first);
+    return ListView.builder(
+        itemCount: _tickerResponse.entitiesList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return CryptoListCard(_tickerResponse.entitiesList[index]);
+        });
   }
 }
