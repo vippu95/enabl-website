@@ -1,18 +1,12 @@
+import 'package:enabl/data/wazirx_ticker_api_response.dart';
+import 'package:enabl/utils/http_request_utils.dart';
 import 'package:enabl/widget/crypto_list_widget.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WazirxTickerApiResponse tickerApiResponse =
+      await HttpRequestUtil.getWazirxTickerResponse();
+  print(tickerApiResponse);
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Demo landing page !',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: CryptoListWidget(),
-    );
-  }
+  runApp(new MaterialApp(home: new CryptoListWidget(tickerApiResponse)));
 }
