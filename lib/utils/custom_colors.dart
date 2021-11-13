@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 
 class CustomColors {
   static final Color white1 = Color(0xFFF8FBFF);
