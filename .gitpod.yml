@@ -2,6 +2,8 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: |
+      npm install -g firebase-tools
+      
       flutter channel beta
       flutter upgrade
 
