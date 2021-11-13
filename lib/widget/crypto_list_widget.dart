@@ -1,11 +1,11 @@
-import 'package:enabl/data/wazirx_ticker_api_response.dart';
+import 'package:enabl/data/ticker_api_response.dart';
 import 'package:enabl/widget/crypto_list_card.dart';
 import 'package:flutter/material.dart';
 
 class CryptoListWidget extends StatelessWidget {
-  final WazirxTickerApiResponse _wazirxTickerApiResponse;
+  final List<TickerResponseEntity> _tickerResponseList;
 
-  CryptoListWidget(this._wazirxTickerApiResponse);
+  CryptoListWidget(this._tickerResponseList);
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +16,11 @@ class CryptoListWidget extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    List<WazirxTickerApiEntity> cryptoList = [
-      _wazirxTickerApiResponse.btcinr,
-      _wazirxTickerApiResponse.xrpinr
-    ];
-
     return new Flexible(
         child: new ListView.builder(
-            itemCount: cryptoList.length,
+            itemCount: _tickerResponseList.length,
             itemBuilder: (context, index) {
-              return CryptoListCard(cryptoList[index]);
+              return CryptoListCard(_tickerResponseList[index]);
             }));
   }
 }
