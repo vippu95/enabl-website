@@ -12,7 +12,7 @@ class CryptoListCard extends StatelessWidget {
     return Card(
         child: ListTile(
       title: Text(entity.name),
-      subtitle: Text(entity.usdPrice.toString()),
+      subtitle: Text("Price: " + entity.usdPrice.toString() + "\n24Hr Change: " + entity.oneDayChangePercent.toString()),
     ));
   }
 }
