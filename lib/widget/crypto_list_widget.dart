@@ -16,6 +16,6 @@ class CryptoListWidget extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return CryptoListCard("bitcoin", _tickerResponse.bitcoin);
+    return CryptoListCard(_tickerResponse.entitiesList.first);
   }
 }

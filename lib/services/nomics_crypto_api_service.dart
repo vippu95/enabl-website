@@ -8,7 +8,7 @@ class CoinGeckoCryptoApiService {
 
   static Future<TickerResponse> getTickerData() async {
     final queryParameters = {
-      'ids': 'bitcoin',
+      'ids': 'bitcoin,ethereum',
       'vs_currencies': 'usd',
       'include_24hr_vol': 'true',
       'include_24hr_change': 'true'
