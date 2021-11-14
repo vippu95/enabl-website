@@ -31,6 +31,7 @@ class CryptoListPage extends StatelessWidget {
   Widget _buildAppBar() {
     return AppBar(
       elevation: 0.1,
+      centerTitle: true,
       backgroundColor: Colors.lightBlue,
       title: Text("Crypto Tracker"),
       actions: <Widget>[
