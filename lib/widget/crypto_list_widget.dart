@@ -1,9 +1,9 @@
-import 'package:enabl/data/ticker_api_response.dart';
+import 'package:enabl/data/simple_price_api_response.dart';
 import 'package:enabl/widget/crypto_list_card.dart';
 import 'package:flutter/material.dart';
 
 class CryptoListWidget extends StatelessWidget {
-  final TickerResponse _tickerResponse;
+  final SimplePriceResponse _tickerResponse;
 
   CryptoListWidget(this._tickerResponse);
 

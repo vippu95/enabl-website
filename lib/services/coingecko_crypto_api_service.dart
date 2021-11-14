@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:enabl/data/ticker_api_response.dart';
+import 'package:enabl/data/simple_price_api_response.dart';
 
 class CoinGeckoCryptoApiService {
-  static const String urlPrefix = "api.coingecko.com";
-  static const String urlEndpoint = "/api/v3/simple/price";
+  static const String coingGeckApiUrl = "api.coingecko.com";
+  static const String simplePriceApiEndpoint = "/api/v3/simple/price";
 
-  static Future<TickerResponse> getTickerData() async {
+  static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
       'ids': 'bitcoin,ethereum',
       'vs_currencies': 'usd',
@@ -14,13 +14,13 @@ class CoinGeckoCryptoApiService {
       'include_24hr_change': 'true'
     };
 
-    final uri = Uri.https(urlPrefix, urlEndpoint, queryParameters);
+    final uri = Uri.https(coingGeckApiUrl, simplePriceApiEndpoint, queryParameters);
     final response = await http.get(uri);
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      return TickerResponse.fromJson(json.decode(response.body));
+      return SimplePriceResponse.fromJson(json.decode(response.body));
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
