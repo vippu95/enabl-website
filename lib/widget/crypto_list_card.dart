@@ -54,7 +54,7 @@ class CryptoListCard extends StatelessWidget {
     );
   }
 
-  CircleAvatar _getLeadingWidget(String name, MaterialColor color) {
+  CircleAvatar _getLeadingWidget(String name, Color color) {
     return new CircleAvatar(
       backgroundColor: color,
       child: new Text(name[0]),
