@@ -42,7 +42,7 @@ class CryptoListCard extends StatelessWidget {
       leading: Container(
         padding: EdgeInsets.only(right: 12.0),
         decoration: new BoxDecoration(border: new Border(right: new BorderSide(width: 1.0, color: Colors.white24))),
-        child: _getLeadingWidget(titleText[0], chaneColor),
+        child: _getLeadingWidget(titleText[0], changeColor),
       ),
       title: Text(titleText, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       subtitle: Row(
