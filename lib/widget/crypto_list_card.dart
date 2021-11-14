@@ -27,8 +27,7 @@ class CryptoListCard extends StatelessWidget {
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      title: Text(titleText,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+      title: Text(titleText, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       subtitle: Row(
         children: <Widget>[
           Text(priceText, style: TextStyle(color: Colors.white)),
