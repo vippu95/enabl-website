@@ -17,6 +17,7 @@ class CryptoListState extends State<CryptoListPage> {
     SimplePriceResponse temp = await CoinGeckoCryptoApiService.getSimplePriceData();
     setState(() {
       this._tickerResponse = temp;
+      _tickerResponse.entitiesList.sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
       print(_tickerResponse);
     });
     return;
@@ -38,8 +39,6 @@ class CryptoListState extends State<CryptoListPage> {
   }
 
   Widget _buildBody() {
-    _tickerResponse.entitiesList.sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
-
     return ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: _tickerResponse.entitiesList.length,
