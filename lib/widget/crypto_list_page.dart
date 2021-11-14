@@ -30,7 +30,7 @@ class CryptoListPage extends StatelessWidget {
     return AppBar(
       elevation: 0.1,
       backgroundColor: CustomColors.darkColor,
-      title: Text("Crypto list"),
+      title: Text("Crypto Tracker"),
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.list),
