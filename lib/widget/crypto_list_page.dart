@@ -19,6 +19,7 @@ class CryptoListPage extends StatelessWidget {
 
   Widget _buildBody() {
     return ListView.builder(
+        scrollDirection: Axis.vertical,
         itemCount: _tickerResponse.entitiesList.length,
         itemBuilder: (BuildContext context, int index) {
           return CryptoListCard(_tickerResponse.entitiesList[index]);
