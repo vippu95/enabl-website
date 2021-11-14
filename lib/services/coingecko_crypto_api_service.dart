@@ -22,7 +22,11 @@ class CoinGeckoCryptoApiService {
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      List<SimplePriceResponseEntity> entityList = json.decode(response.body);
+      List<dynamic> jsonList = json.decode(response.body);
+      List<SimplePriceResponseEntity> entityList = [];
+      jsonList.forEach((element) {
+        entityList.add(SimplePriceResponseEntity.fromJson(element));
+      });
       return SimplePriceResponse(entitiesList: entityList);
     } else {
       // If the server did not return a 200 OK response,
