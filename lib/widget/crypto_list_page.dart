@@ -14,10 +14,10 @@ class CryptoListState extends State<CryptoListPage> {
 
   Future<void> callSimplePriceApi() async {
     print('Getting prices');
-    SimplePriceResponse temp = await CoinGeckoCryptoApiService.getSimplePriceData();
+    SimplePriceResponse temp =
+        await CoinGeckoCryptoApiService.getSimplePriceData();
     setState(() {
       this._tickerResponse = temp;
-      _tickerResponse.entitiesList.sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
       print(_tickerResponse);
     });
     return;
@@ -39,12 +39,17 @@ class CryptoListState extends State<CryptoListPage> {
   }
 
   Widget _buildBody() {
-    return ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: _tickerResponse.entitiesList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return CryptoListCard(_tickerResponse.entitiesList[index]);
-        });
+    if (_tickerResponse != null) {
+      _tickerResponse.entitiesList.sort(
+          (a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
+      return ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: _tickerResponse.entitiesList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return CryptoListCard(_tickerResponse.entitiesList[index]);
+          });
+    }
+    return null;
   }
 
   Widget _buildAppBar() {
