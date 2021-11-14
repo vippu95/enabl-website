@@ -8,13 +8,6 @@ import 'package:flutter/material.dart';
 
 class CryptoListCard extends StatelessWidget {
   final SimplePriceResponseEntity entity;
-  final List<MaterialColor> _cryptoColors = [
-    Colors.blue,
-    Colors.indigo,
-    Colors.lime,
-    Colors.teal,
-    Colors.cyan
-  ];
 
   CryptoListCard(this.entity);
 
@@ -35,7 +28,6 @@ class CryptoListCard extends StatelessWidget {
     String changeText = "   24Hr Change: " + entity.oneDayChangePercent.toStringAsFixed(3);
 
     Color changeColor = entity.oneDayChangePercent > 0 ? Colors.green : Colors.redAccent;
-    int colorIdx = Random().nextInt(_cryptoColors.length);
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
