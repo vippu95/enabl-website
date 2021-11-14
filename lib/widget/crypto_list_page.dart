@@ -1,12 +1,21 @@
 import 'package:enabl/constant/custom_colors.dart';
 import 'package:enabl/data/simple_price_api_response.dart';
+import 'package:enabl/services/coingecko_crypto_api_service.dart';
 import 'package:enabl/widget/crypto_list_card.dart';
 import 'package:flutter/material.dart';
 
-class CryptoListPage extends StatelessWidget {
-  final SimplePriceResponse _tickerResponse;
+class CryptoListPage extends StatefulWidget {
+  @override
+  CryptoListState createState() => CryptoListState();
+}
 
-  CryptoListPage(this._tickerResponse);
+class CryptoListState extends State<CryptoListPage> {
+  SimplePriceResponse _tickerResponse;
+
+  @override
+  Future<void> initState() async {
+    _tickerResponse = await CoinGeckoCryptoApiService.getSimplePriceData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +27,8 @@ class CryptoListPage extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    _tickerResponse.entitiesList.sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
+    _tickerResponse.entitiesList
+        .sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? -1 : 1);
 
     return ListView.builder(
         scrollDirection: Axis.vertical,

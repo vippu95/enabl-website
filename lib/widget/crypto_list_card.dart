@@ -27,7 +27,7 @@ class CryptoListCard extends StatelessWidget {
         "   24Hr Change: " + entity.oneDayChangePercent.toStringAsFixed(3);
 
     Color changeColor =
-        entity.oneDayChangePercent > 0 ? Colors.green : Colors.redAccent;
+        entity.oneDayChangePercent > 0 ? Colors.green : Colors.lightBlue;
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
@@ -36,7 +36,7 @@ class CryptoListCard extends StatelessWidget {
         decoration: new BoxDecoration(
             border: new Border(
                 right: new BorderSide(width: 1.0, color: Colors.white24))),
-        child: Icon(Icons.ac_unit, color: Colors.white),
+        child: _getLeadingWidget("A", Colors.blue),
       ),
       title: Text(titleText,
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -46,6 +46,13 @@ class CryptoListCard extends StatelessWidget {
           Text(changeText, style: TextStyle(color: changeColor))
         ],
       ),
+    );
+  }
+
+  CircleAvatar _getLeadingWidget(String name, MaterialColor color) {
+    return new CircleAvatar(
+      backgroundColor: color,
+      child: new Text(name[0]),
     );
   }
 }

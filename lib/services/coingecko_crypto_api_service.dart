@@ -6,7 +6,7 @@ class CoinGeckoCryptoApiService {
   static const String coingGeckApiUrl = "api.coingecko.com";
   static const String simplePriceApiEndpoint = "/api/v3/simple/price";
 
-  static Future<SimplePriceResponse> getSimplePriceData() async {
+static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
       'ids': 'bitcoin,ethereum,ripple',
       'vs_currencies': 'usd',
