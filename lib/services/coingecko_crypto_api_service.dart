@@ -6,9 +6,9 @@ class CoinGeckoCryptoApiService {
   static const String coingGeckApiUrl = "api.coingecko.com";
   static const String simplePriceApiEndpoint = "/api/v3/simple/price";
 
-static Future<SimplePriceResponse> getSimplePriceData() async {
+  static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
-      'ids': 'bitcoin,ethereum,ripple',
+      'ids': 'avalanche-2,binancecoin,bitcoin,cardano,decentraland,ethereum,iotex,polkadot,ripple,solana,tether',
       'vs_currencies': 'usd',
       'include_24hr_vol': 'true',
       'include_24hr_change': 'true'
