@@ -23,13 +23,23 @@ class CryptoListCard extends StatelessWidget {
   Widget _makeTile() {
     String titleText = StringUtils.convertToTitleCase(entity.name);
     String priceText = "Price: " + entity.usdPrice.toString();
-    String changeText = "   24Hr Change: " + entity.oneDayChangePercent.toStringAsFixed(3);
+    String changeText =
+        "   24Hr Change: " + entity.oneDayChangePercent.toStringAsFixed(3);
 
-    Color changeColor = entity.oneDayChangePercent > 0 ? Colors.green : Colors.redAccent;
+    Color changeColor =
+        entity.oneDayChangePercent > 0 ? Colors.green : Colors.redAccent;
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      title: Text(titleText, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+      leading: Container(
+        padding: EdgeInsets.only(right: 12.0),
+        decoration: new BoxDecoration(
+            border: new Border(
+                right: new BorderSide(width: 1.0, color: Colors.white24))),
+        child: Icon(Icons.ac_unit, color: Colors.white),
+      ),
+      title: Text(titleText,
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       subtitle: Row(
         children: <Widget>[
           Text(priceText, style: TextStyle(color: changeColor)),
