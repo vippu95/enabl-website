@@ -31,7 +31,7 @@ class CryptoListCard extends StatelessWidget {
       subtitle: Row(
         children: <Widget>[
           Text(priceText, style: TextStyle(color: Colors.white)),
-          Text(changeText, style: TextStyle(color: Colors.white))
+          Text(changeText, style: TextStyle(color: entity.oneDayChangePercent > 0 ? Colors.green : Colors.red))
         ],
       ),
     );
