@@ -23,7 +23,7 @@ class CryptoListCard extends StatelessWidget {
   Widget _makeTile() {
     String titleText = StringUtils.convertToTitleCase(entity.name);
     String priceText = "Price: " + entity.usdPrice.toString();
-    String changeText = "   24Hr Change: " + entity.oneDayChangePercent.toString();
+    String changeText = "   24Hr Change: " + entity.oneDayChangePercent.toStringFixed(3);
 
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
