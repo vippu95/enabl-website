@@ -8,7 +8,7 @@ class CoinGeckoCryptoApiService {
 
   static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
-      'ids': 'bitcoin,ethereum',
+      'ids': 'bitcoin,ethereum,ripple',
       'vs_currencies': 'usd',
       'include_24hr_vol': 'true',
       'include_24hr_change': 'true'
