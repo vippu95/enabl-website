@@ -37,7 +37,7 @@ class CryptoListCard extends StatelessWidget {
         decoration: new BoxDecoration(
             border: new Border(
                 right: new BorderSide(width: 1.0, color: Colors.white24))),
-        child: _getLeadingWidget(titleText[0], changeColor),
+        child: Image.network(entity.imageUrl),
       ),
       title: Text(titleText,
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -47,13 +47,6 @@ class CryptoListCard extends StatelessWidget {
           Text(changeText, style: TextStyle(color: changeColor))
         ],
       ),
-    );
-  }
-
-  CircleAvatar _getLeadingWidget(String name, Color color) {
-    return new CircleAvatar(
-      backgroundColor: color,
-      child: new Text(name[0]),
     );
   }
 }
