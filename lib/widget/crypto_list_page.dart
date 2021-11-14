@@ -18,6 +18,8 @@ class CryptoListPage extends StatelessWidget {
   }
 
   Widget _buildBody() {
+    _tickerResponse.entitiesList.sort((a, b) => a.oneDayChangePercent > b.oneDayChangePercent ? 1 : -1);
+
     return ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: _tickerResponse.entitiesList.length,
