@@ -12,9 +12,15 @@ class CryptoListPage extends StatefulWidget {
 class CryptoListState extends State<CryptoListPage> {
   SimplePriceResponse _tickerResponse;
 
-  @override
-  Future<void> initState() async {
+  Future<void> callSimplePriceApi() async {
     _tickerResponse = await CoinGeckoCryptoApiService.getSimplePriceData();
+    return;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    callSimplePriceApi();
   }
 
   @override
