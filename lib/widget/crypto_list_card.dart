@@ -55,4 +55,5 @@ class CryptoListCard extends StatelessWidget {
       backgroundColor: color,
       child: new Text(name[0]),
     );
+  }
 }
