@@ -25,13 +25,15 @@ class CryptoListCard extends StatelessWidget {
     String priceText = "Price: " + entity.usdPrice.toString();
     String changeText = "   24Hr Change: " + entity.oneDayChangePercent.toStringAsFixed(3);
 
+    Color changeColor = entity.oneDayChangePercent > 0 ? Colors.green : Colors.red;
+
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       title: Text(titleText, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       subtitle: Row(
         children: <Widget>[
-          Text(priceText, style: TextStyle(color: Colors.white)),
-          Text(changeText, style: TextStyle(color: entity.oneDayChangePercent > 0 ? Colors.green : Colors.red))
+          Text(priceText, style: TextStyle(color: changeColor)),
+          Text(changeText, style: TextStyle(color: changeColor))
         ],
       ),
     );
