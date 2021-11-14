@@ -6,6 +6,13 @@ import 'package:flutter/material.dart';
 
 class CryptoListCard extends StatelessWidget {
   final SimplePriceResponseEntity entity;
+  final List<MaterialColor> _cryptoColors = [
+    Colors.blue,
+    Colors.indigo,
+    Colors.lime,
+    Colors.teal,
+    Colors.cyan
+  ];
 
   CryptoListCard(this.entity);
 
