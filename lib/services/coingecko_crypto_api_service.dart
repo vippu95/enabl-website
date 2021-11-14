@@ -4,23 +4,26 @@ import 'package:enabl/data/simple_price_api_response.dart';
 
 class CoinGeckoCryptoApiService {
   static const String coingGeckApiUrl = "api.coingecko.com";
-  static const String simplePriceApiEndpoint = "/api/v3/simple/price";
+  static const String simplePriceApiEndpoint = "/api/v3/coins/markets";
 
   static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
-      'ids': 'aave,algorand,avalanche-2,axie-infinity,basic-attention-token,binancecoin,bitcoin,cardano,chainlink,cosmos,crypto-com-chain,decentraland,dogecoin,elrond-erd-2,ethereum,fantom,harmony,internet-computer,iotex,litecoin,loopring,matic-network,monero,near,polkadot,ripple,shiba-inu,solana,stellar,tether,tezos,tron,vechain,uniswap',
-      'vs_currencies': 'usd',
-      'include_24hr_vol': 'true',
-      'include_24hr_change': 'true'
+      'vs_currency': 'usd',
+      'order': 'market_cap_desc',
+      'per_page': '150',
+      'page': '1',
+      'price_change_percentage': '1h,24h,7d'
     };
 
-    final uri = Uri.https(coingGeckApiUrl, simplePriceApiEndpoint, queryParameters);
+    final uri =
+        Uri.https(coingGeckApiUrl, simplePriceApiEndpoint, queryParameters);
     final response = await http.get(uri);
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      return SimplePriceResponse.fromJson(json.decode(response.body));
+      List<SimplePriceResponseEntity> entityList = json.decode(response.body);
+      return SimplePriceResponse(entitiesList: entityList);
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
