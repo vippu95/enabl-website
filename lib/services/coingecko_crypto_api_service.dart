@@ -8,7 +8,7 @@ class CoinGeckoCryptoApiService {
 
   static Future<SimplePriceResponse> getSimplePriceData() async {
     final queryParameters = {
-      'ids': 'binancecoin,bitcoin,cardano,decentraland,ethereum,iotex,polkadot,ripple,solana,tether',
+      'ids': 'aave,algorand,avalanche-2,axie-infinity,basic-attention-token,binancecoin,bitcoin,cardano,chainlink,cosmos,crypto-com-chain,decentraland,dogecoin,elrond-erd-2,ethereum,fantom,harmony,internet-computer,iotex,litecoin,loopring,matic-network,monero,near,polkadot,ripple,shiba-inu,solana,stellar,tether,tezos,tron,vechain,uniswap',
       'vs_currencies': 'usd',
       'include_24hr_vol': 'true',
       'include_24hr_change': 'true'
